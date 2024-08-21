@@ -70,26 +70,86 @@
 // }
 
 // const course=console.log(createCourse("zoheir",["ali","mo"]))
-window.onload=new function(){
-  const pargraoh=document.createElement('p')
-  pargraoh.innerText="test"
-  document.body.appendChild(pargraoh)
-  pargraoh.setAttribute("style","")
+// window.onload=new function(){
+//   const pargraoh=document.createElement('p')
+//   pargraoh.innerText="test"
+//   document.body.appendChild(pargraoh)
+//   pargraoh.setAttribute("style","")
   
-}
-function handel(){
-  const gety=document.getElementById('hrt')
-  gety.setAttribute('href','httpp://zoheirsfotware.com')
-  gety.setAttribute('class','text-center text-danger')
-  console.log(gety.getAttribute('href'))
-}
-function start()
+// }
+// function handel(){
+//   const gety=document.getElementById('hrt')
+//   gety.setAttribute('href','httpp://zoheirsfotware.com')
+//   gety.setAttribute('class','text-center text-danger')
+//   console.log(gety.getAttribute('href'))
+// }
+// function start()
+// {
+  
+//   window.setTimeout(stop,3000)
+// }
+// function stop()
+// {
+  
+//   location.href="https://www.w3schools.com/js/js_window_location.asp"
+// }
+let fadeid;
+let fadeoutid
+
+function fadeout()
 {
-  
-  window.setTimeout(stop,3000)
+ fadeoutid=setInterval(hide,20);
 }
-function stop()
+function hide()
 {
-  
-  location.href="https://www.w3schools.com/js/js_window_location.asp"
+  let pid=document.getElementById('text1')
+  opacity=Number(window.getComputedStyle(pid).getPropertyValue('opacity'))
+  if(opacity>0)
+  {
+    opacity =opacity - 0.01
+    pid.style.opacity=opacity
+  }
+  else{
+    clearInterval(fadeoutid)
+  }
 }
+
+  function fadein(){
+    fadeid=setInterval(show,20)
+  }
+  function show()
+  {
+    let pid=document.getElementById('text1')
+    opacity=Number(window.getComputedStyle(pid).getPropertyValue('opacity'))
+    if(opacity <1)
+    {
+      opacity =opacity + 0.01
+      pid.style.opacity=opacity
+    }
+    else{
+      clearInterval(fadeid)
+    }
+  }
+ 
+  let index=0
+  const text="hello we sdlsk sd sds dcfsf sfs"
+  function writertext(){
+    document.getElementById('text1').innerText=text.slice(0,index)
+    index++
+    if(index>text.length-1)
+    {
+      index=0
+    }
+  }
+  function writertext1(){
+    setInterval(writertext,100)
+  }
+  
+  window.onload=new function()
+  {
+    const toggle=document.getElementById('toggle')
+    toggle.addEventListener('change',function(e){
+    document.body.classList.toggle('dark',e.target.checked)
+    })
+
+  }
