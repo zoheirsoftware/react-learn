@@ -3,26 +3,70 @@
         <style>
             body{
             display: flex;
-                transition: background 0.3s linear,color 0.3s linear;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            flex-direction: column;
+                /* transition: background 0.no3s linear,color 0.3s linear;
+                text-align: center; */
+
+                font-size: 18px;
+                font-weight:bold ;
             }
             .dark{
                 background-color: black;
                 color: #fff;
             }
+            #open{
+                background-color: yellow;
+                color:black;
+                border: none;
+                border-radius: 3px;
+                padding: 1rem;
+            }
+            .popup{
+                background-color: #fff;
+                width: 500px;
+                padding: 2rem;
+                border-radius: 5px;
+                box-shadow: 2px 2px 5px rgba(0,0,0,00.3);
+                position: relative;
+               transform: translateX(-300%);
+               transition: all 0.4s linear;
+
+            }
+            .popup.active{
+                transform: translateX(0%)
+            }
         </style>
     </head>
     <body>
-        <p id="text1">test paskal</p>
+        <!-- <p id="text1">test paskal</p>
         <a id="hrt" class="test" href="httpp://www.google.com">sucess</a>
         <button onclick="start()">click me</button>
         <button onclick="fadeout()">fadeout me</button>
         <button onclick="fadein()">fadein</button>
-        <button onclick="writertext1()">writertext</button>
+        <button onclick="writertext1()">writertext</button> -->
+
+        <div>
+            <button id="open">open</button>
+            <div class="popup">
+<button id="close" class="clos">$times.</button>
+<h1>test</h1>
+<p>testljdksj</p>
+            </div>
+        </div>
         <input id="toggle" type="checkbox" value="type toogle">
         <script src="https://code.jquery.comfadeout/jquery-3.7.1.min.js" 
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
         crossorigin="anonymous"></script>
-   
+   <select id="selecbox">
+<option value="one">one</option>
+<option value="one1">one1</option>
+   </select>
+
+   <button onclick="getvalselect()">getvalu select</button>
         <script src="./main.js"   ></script>
    
    
